@@ -1,7 +1,10 @@
 import Image from "next/image";
 import WaveBackground from "../wavebackground/page";
 import Link from "next/link";
-
+import { TiSocialFacebook } from "react-icons/ti";
+import { ImTwitter } from "react-icons/im";
+import { FaInstagram } from "react-icons/fa";
+import { FaPinterestP } from "react-icons/fa";
 const Footer = () => {
   return (
     <>
@@ -21,11 +24,31 @@ const Footer = () => {
               niche markets. Objectively harness competitive resources.
             </p>
           </div>
-          <div>
-            <nav>
-            </nav>
-          </div>
+          <nav className="flex gap-2 -mt-15">
+            <Link href="#">
+              <div className=" h-8 w-8 bg-[#b97cdd] rounded-full flex justify-center items-center text-white">
+                <TiSocialFacebook size={24} />
+              </div>
+            </Link>
+            <Link href="#">
+              <div className=" h-8 w-8 bg-[#b97cdd] rounded-full flex justify-center items-center text-white">
+                <ImTwitter size={18} />
+              </div>
+            </Link>
+            <Link href="#">
+              <div className=" h-8 w-8 bg-[#b97cdd] rounded-full flex justify-center items-center text-white">
+                <FaInstagram />{" "}
+              </div>
+            </Link>
+            <Link href="#">
+              <div className=" h-8 w-8 bg-[#b97cdd] rounded-full flex justify-center items-center text-white">
+                <FaPinterestP />
+              </div>
+            </Link>
+          </nav>
         </div>
+
+        <div></div>
       </div>
     </>
   );

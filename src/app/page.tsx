@@ -1,7 +1,11 @@
+import BgScreenshot from "./components/bgScreenshot/page";
 import Features from "./components/features/page";
 import Footer from "./components/footer/page";
 import Homepage from "./components/homepage/page";
 import Navbar from "./components/navbar/page";
+import Plans from "./components/plans/page";
+import PlansBgImage from "./components/plans/plansbgImage/page";
+import Reviews from "./components/reviews/page";
 import ScreenShot from "./components/screenshot/page";
 import WorkStep from "./components/workstep/page";
 export default function Home() {
@@ -14,7 +18,10 @@ export default function Home() {
    </div>
     <WorkStep/>
     <ScreenShot/>
-    <Footer/>
+    <Plans/>
+    {/* <Footer/> */}
+    {/* <PlansBgImage/> */}
+     <Reviews/>
    </div>
   );
 }

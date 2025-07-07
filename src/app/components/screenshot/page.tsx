@@ -62,14 +62,14 @@ const ScreenShot = () => {
                     key={index}
                     className=" md:basis-1/2 lg:basis-1/5"
                   >
-                    <div className="h-[380px] w-[260px] rounded">
+                    <div className="h-[380px] w-[260px] ">
                       <CardContent className="flex">
                         <Image
                           src={imageUrl}
                           alt={`Image ${index + 1}`}
                           height={500}
                           width={550}
-                          className="object-cover h-full w-full rounded-lg"
+                          className="object-contain h-full w-full rounded-2xl"
                         />
                       </CardContent>
                     </div>
