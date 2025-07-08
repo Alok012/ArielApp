@@ -1,7 +1,9 @@
+import AskedQuestions from "./components/askedQuestions/page";
 import BgScreenshot from "./components/bgScreenshot/page";
 import Features from "./components/features/page";
 import Footer from "./components/footer/page";
 import Homepage from "./components/homepage/page";
+import LatestNews from "./components/latestNews/page";
 import Navbar from "./components/navbar/page";
 import Plans from "./components/plans/page";
 import PlansBgImage from "./components/plans/plansbgImage/page";
@@ -22,6 +24,8 @@ export default function Home() {
     {/* <Footer/> */}
     {/* <PlansBgImage/> */}
      <Reviews/>
+     <AskedQuestions/>
+     <LatestNews/>
    </div>
   );
 }

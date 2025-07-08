@@ -1,14 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import BgScreenshot from "../bgScreenshot/page";
-import { CardContent } from "@/components/ui/card";
-import Autoplay from "embla-carousel-autoplay";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
 import Image from "next/image";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const ImageUrls = [
   "https://elmanawy.info/demo/ariel/ltr/images/screen/2.png",
@@ -19,19 +15,8 @@ const ImageUrls = [
 ];
 
 const ScreenShot = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const handleDotClick = (index: number) => {
-    // Scroll to the selected item
-    const carousel = document.querySelectorAll("[data-carousel-item]")[index];
-    if (carousel) {
-      carousel.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest",
-        inline: "center",
-      });
-      setCurrentIndex(index);
-    }
-  };
+  const [centerSlideIndex, setCenterSlideIndex] = useState(2);
+
   return (
     <>
       <div className="relative">
@@ -47,46 +32,78 @@ const ScreenShot = () => {
               Turn your mobile visitors into your best customers.
             </p>
           </div>
-          <div className="mt-15" >
-            <Carousel
-              plugins={[
-                Autoplay({
-                  delay: 2000,
-                }),
-              ]}
-              className="w-full min-h-[400px]"
-            >
-              <CarouselContent>
-                {ImageUrls.map((imageUrl, index) => (
-                  <CarouselItem
-                    key={index}
-                    className=" md:basis-1/2 lg:basis-1/5"
-                  >
-                    <div className="h-[380px] w-[260px] ">
-                      <CardContent className="flex">
-                        <Image
-                          src={imageUrl}
-                          alt={`Image ${index + 1}`}
-                          height={500}
-                          width={550}
-                          className="object-contain h-full w-full rounded-2xl"
-                        />
-                      </CardContent>
+
+          <div className="w-[90%] flex justify-center mt-15 h-auto mx-auto">
+            <div className="w-full max-w-7xl px-4 relative">
+              <Slider
+                dots={true}
+                infinite={true}
+                speed={500}
+                slidesToShow={5}
+                slidesToScroll={1}
+                autoplay={true}
+                autoplaySpeed={2000}
+                arrows={false}
+                afterChange={(currentSlide) => {
+                  setCenterSlideIndex(currentSlide + 2);
+                }}
+                responsive={[
+                  {
+                    breakpoint: 1280,
+                    settings: { slidesToShow: 5 },
+                  },
+                  {
+                    breakpoint: 1024,
+                    settings: { slidesToShow: 4 },
+                  },
+                  {
+                    breakpoint: 768,
+                    settings: { slidesToShow: 3 },
+                  },
+                  {
+                    breakpoint: 640,
+                    settings: { slidesToShow: 2 },
+                  },
+                  {
+                    breakpoint: 480,
+                    settings: { slidesToShow: 1 },
+                  },
+                ]}
+              >
+                {ImageUrls.map((imageUrl, idx) => {
+                  const isCenter = idx === centerSlideIndex;
+
+                  return (
+                    <div
+                      key={idx}
+                      className="flex items-center justify-center mt-2 relative px-3"
+                    >
+                      <Image
+                        src={imageUrl}
+                        alt={`imageUrl ${idx + 1}`}
+                        width={isCenter ? 280 : 250}
+                        height={isCenter ? 445 : 250}
+                        unoptimized={true}
+                        className={`rounded-2xl transition-all duration-300 ${
+                          isCenter
+                            ? "w-[290px] h-[445px] object-cover z-20  relative"
+                            : "object-contain min-h-[280px]"
+                        }`}
+                      />
                     </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-            </Carousel>
-            <div className="flex justify-center mt-4 space-x-2">
-              {ImageUrls.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => handleDotClick(index)}
-                  className={`w-3 h-3 rounded-full ${
-                    currentIndex === index ? "bg-black" : "bg-gray-400"
-                  }`}
-                ></button>
-              ))}
+                  );
+                })}
+              </Slider>
+
+              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 mt-4 z-30 pointer-events-none">
+                <Image
+                  src="https://elmanawy.info/demo/ariel/ltr/images/screen/phone.png"
+                  alt="Overlay"
+                  width={250}
+                  height={460}
+                  className="h-[470px] w-[250px] object-contain -mt-5"
+                />
+              </div>
             </div>
           </div>
         </div>
