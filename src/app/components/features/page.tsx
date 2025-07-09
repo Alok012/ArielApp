@@ -6,101 +6,59 @@ import Layer from "../../../assets/layer.png";
 import Bag from "../../../assets/menu.png";
 import Square from "../../../assets/portfolio.png";
 
-
 const Features = () => {
   return (
-    <div>
-      <div className="mt-40">
-        <div className="text-center">
-          <h1 className="text-4xl font-[Poppins]">Core Features</h1>
-          <div className="w-[50%] h-20 text-center justify-center mx-auto mt-5 text-[#77838f] text-base">
-            <p className="leading-6 font-light">
-              Efficiently syndicate flexible content via cost effective
-              initiatives completely leverage vertical quality. 
-              <br/>Turn your mobile
-              visitors into your best customers.
-            </p>
-          </div>
+    <div className="bg-[#f8f9fb] py-16 px-4">
+      <div className="text-center">
+        <h1 className="text-3xl sm:text-4xl font-[Poppins] -mt-10">
+          Core Features
+        </h1>
+        <div className="w-full sm:w-[90%] md:w-[70%] lg:w-[50%] mx-auto mt-5 text-[#77838f] text-base">
+          <p className="leading-6 font-light">
+            Efficiently syndicate flexible content via cost effective
+            initiatives completely leverage vertical quality.
+            <br />
+            Turn your mobile visitors into your best customers.
+          </p>
         </div>
       </div>
-      <div className=" mt-20 h-[50%] w-[70%] mx-auto mb-20">
-        <div className="text-center grid grid-cols-3 ">
-          <div className="h-35 w-80 my-3 flex justify-center items-center rounded bg-[#ffffff]">
-            <div className=" w-30 h-15">
-              <Image src={Bulb} alt="buld-img" height={70} width={70} className="mx-4 mt-1" />
-            </div>
-            <div className=" ml-8 mr-1 mt-3 h-30 text-left">
-              <h1 className="text-lg font-semibold">Discuss Idea</h1>
-              <p className="text-[#77838f] text-left mt-1">
-                Lorem Ipsum is simply dummy text ever since of the printing and
-                typesetting industry.
-              </p>
-            </div>
-          </div>
-          <div className="h-35 w-80 my-3 flex justify-center items-center bg-[#ffffff] rounded">
-            <div className=" w-30 h-15">
-              <Image src={FingerPrint} alt="buld-img" height={70} width={70} className="mx-4 mt-2"/>
-            </div>
-            <div className=" ml-8 mr-2 mt-3 text-left">
-              <h1 className="text-lg font-semibold">Account Security</h1>
-              <p className="text-[#77838f] mt-1">
-                Lorem Ipsum is simply dummy text ever since of the printing and
-                typesetting industry.
-              </p>
-            </div>
-          </div>
 
-          <div className="h-35 w-80 my-3 flex justify-center items-center bg-[#ffffff] rounded">
-            <div className=" w-30 h-15 items-center">
-              <Image src={LifeSaver} alt="buld-img" height={100} width={100} className="mx-4 mt-2"/>
+      <div className="mt-16 w-full sm:w-[90%] md:w-[80%] lg:w-[70%] mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
+          {[
+            { img: Bulb, title: "Discuss Idea" },
+            { img: FingerPrint, title: "Account Security" },
+            { img: LifeSaver, title: "Discuss Idea" },
+            { img: Layer, title: "Help Center" },
+            { img: Bag, title: "Help Center" },
+            { img: Square, title: "Help Center" },
+          ].map((feature, index) => (
+            <div
+              key={index}
+              className="flex bg-white p-4 rounded items-center gap-4 text-left"
+            >
+              <div className="flex-shrink-0">
+                <Image
+                  src={feature.img}
+                  alt="feature-img"
+                  width={70}
+                  height={70}
+                  className="object-contain"
+                />
+              </div>
+              <div>
+                <h1 className="text-lg font-semibold">{feature.title}</h1>
+                <p className="text-[#77838f] mt-1 text-sm">
+                  Lorem Ipsum is simply dummy text ever since of the printing
+                  and typesetting industry.
+                </p>
+              </div>
             </div>
-            <div className=" ml-8 mr-1 mt-3 text-left">
-              <h1 className="text-lg font-semibold">Discuss Idea</h1>
-              <p className="text-[#77838f] mt-1">
-                Lorem Ipsum is simply dummy text ever since of the printing and
-                typesetting industry.
-              </p>
-            </div>
-          </div>
-          <div className="h-35 w-80 my-3 flex justify-center items-center bg-[#ffffff] rounded">
-            <div className=" w-30 h-15">
-              <Image src={Layer} alt="buld-img" height={70} width={70} className="mx-4 mt-2"/>
-            </div>
-            <div className=" ml-8 mr-1 mt-3 text-left ">
-              <h1 className="text-lg font-semibold">Help Center</h1>
-              <p className="text-[#77838f] mt-1">
-                Lorem Ipsum is simply dummy text ever since of the printing and
-                typesetting industry.
-              </p>
-            </div>
-          </div>
-          <div className="h-35 w-80 my-3 flex justify-center items-center bg-[#ffffff] rounded">
-            <div className=" w-30 h-15">
-              <Image src={Bag} alt="buld-img" height={70} width={70} className="mx-4 mt-2" />
-            </div>
-            <div className=" ml-8 mr-1 mt-3 text-left">
-              <h1 className="text-lg font-semibold">Help Center</h1>
-              <p className="text-[#77838f] mt-1">
-                Lorem Ipsum is simply dummy text ever since of the printing and
-                typesetting industry.
-              </p>
-            </div>
-          </div>
-          <div className="h-35 w-80 my-3 flex justify-center items-center bg-[#ffffff] rounded">
-            <div className=" w-30 h-15 ">
-              <Image src={Square} alt="buld-img" height={70} width={70} className="mx-4 mt-2"/>
-            </div>
-            <div className=" ml-8 mr-1 mt-3 text-left">
-              <h1 className="text-lg font-semibold">Help Center</h1>
-              <p className="text-[#77838f] mt-1">
-                Lorem Ipsum is simply dummy text ever since of the printing and
-                typesetting industry.
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
   );
 };
+
 export default Features;

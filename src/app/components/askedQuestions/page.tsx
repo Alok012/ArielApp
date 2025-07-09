@@ -25,46 +25,48 @@ const questions = [
 const AskedQuestions = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   return (
-    <>
-      <div className="-mt-30">
-        <div className="h-30 w-130 mx-auto -mt-10">
-          <h1 className="text-4xl font-medium text-center text-[#333]">
-            Frequently Asked Questions
-          </h1>
-          <p className="text-[#77838f] font-[Poppins] mt-6 font-light leading-7 text-center">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis
-            accumsan nisi Ut ut felis congue nisl hendrerit commodo.
-          </p>
+    <div className="px-4 py-12 sm:px-6 lg:px-20 max-w-7xl mx-auto">
+      <div className="text-center max-w-3xl mx-auto">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-[#333]">
+          Frequently Asked Questions
+        </h1>
+        <p className="text-[#77838f] font-light mt-4 text-sm sm:text-base leading-6">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis
+          accumsan nisi. Ut ut felis congue nisl hendrerit commodo.
+        </p>
+      </div>
+
+      <div className="mt-12 flex flex-col lg:flex-row items-center lg:items-start gap-10">
+        <div className="w-full lg:w-1/2 flex justify-center">
+          <Image
+            src="https://elmanawy.info/demo/ariel/ltr/images/faq2.png"
+            alt="ask-image"
+            height={500}
+            width={500}
+            className="max-w-full h-auto"
+          />
         </div>
-        <div className="flex mt-20">
-          <div className="ml-40 translate-y-2 flex">
-            <Image
-              src="https://elmanawy.info/demo/ariel/ltr/images/faq2.png"
-              alt="ask-image"
-              height={500}
-              width={500}
-            />
-          </div>
-          <div className="ml-30">
-            {questions.map((item, idx) => (
-              <div key={idx}>
-                <Button
-                  className="w-[500px] h-[50px] rounded-4xl text-start pl-8 mb-2 my-4 text-base font-medium hover:cursor-pointer"
-                  onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-                >
-                  {item.q}
-                </Button>
-                {openIndex === idx && (
-                  <p className="h-30 w-120 ml-8 mt-6 transition-all duration-300">
-                    {item.a}
-                  </p>
-                )}
-              </div>
-            ))}
-          </div>
+
+        <div className="w-full lg:w-1/2">
+          {questions.map((item, idx) => (
+            <div key={idx} className="mb-6">
+              <Button
+                className="w-full sm:w-[500px] h-[50px] rounded-3xl text-left px-6 mb-2 text-sm sm:text-base font-medium hover:cursor-pointer bg-[#f9f9f9]"
+                onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
+              >
+                {item.q}
+              </Button>
+              {openIndex === idx && (
+                <p className="mt-3 text-[#555] text-sm sm:text-base px-4">
+                  {item.a}
+                </p>
+              )}
+            </div>
+          ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
+
 export default AskedQuestions;

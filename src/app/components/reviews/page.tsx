@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from "react";
+import React from "react";
 import BgScreenshot from "../bgScreenshot/page";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 import { RiDoubleQuotesL } from "react-icons/ri";
@@ -21,7 +21,7 @@ const CompanyLogo=[
 const Reviews = () => {
   return (
     <div className="relative -mt-30">
-      <div className="relative">
+      <div className="">
         <BgScreenshot/>
         <div className="transform rotate-[180deg] -mt-20">
           <BgScreenshot />

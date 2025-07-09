@@ -2,16 +2,16 @@ import Image from "next/image";
 import { FaPlay } from "react-icons/fa";
 const Homepage = () => {
   return (
-    <div className="flex mt-30 ml-10">
+    <div className="flex ml-10 -mt-200">
       <div className="mx-40 mt-10 w-120">
-        <h2 className="text-[#5bcca7] font-bold">
+        <h2 className="text-[#00c9a7] font-bold text-2xl sm:">
           Build Your Brand Automate Your App!
         </h2>
         <div>
           <h2 className="text-[#7b43ee] text-4xl font-bold mt-4">
             Smart Apps for Smart Life!
           </h2>
-          <p className="mt-2 text-gray-500">
+          <p className="mt-4 text-gray-500 text-base leading-7">
             The first is a non technical method which requires the use of
             software. Download free Ariel Application software and use advanced
             tools to help prevent getting infected.
@@ -26,7 +26,7 @@ const Homepage = () => {
           </div>
         </div>
       </div>
-      <div>
+      <div className="hidden lg:block">
         <Image src="https://elmanawy.info/demo/ariel/ltr/images/banner-5.png"
         alt="mobile-img"
         height={500}

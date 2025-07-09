@@ -41,6 +41,10 @@ const LatestNews = () => {
     autoplay: true,
     autoplaySpeed: 2500,
     arrows: false,
+    responsive: [
+      { breakpoint: 1280, settings: { slidesToShow: 2 } },
+      { breakpoint: 768, settings: { slidesToShow: 1 } },
+    ],
   };
   const sliderRef = useRef<Slider | null>(null);
   const handleLeft = () => {
@@ -52,38 +56,38 @@ const LatestNews = () => {
   return (
     <div className="relative py-20 px-4 bg-white">
       <div className="text-center mb-10">
-        <h1 className="text-[34px] font-semibold text-[#263b5e]">
+        <h1 className="text-[28px] sm:text-[34px] font-semibold text-[#263b5e]">
           Read Our Latest News
         </h1>
-        <p className="text-[#77838f] max-w-[500px] mx-auto mt-3 text-[16px] leading-6">
+        <p className="text-[#77838f] max-w-[500px] mx-auto mt-3 text-sm sm:text-[16px] leading-6">
           Our duty towards you is to share our experience we're reaching in our
           work path with you.
         </p>
       </div>
 
       <div className="w-full flex justify-center">
-        <div className="w-full max-w-[1100px]">
+        <div className="w-full max-w-[1100px] relative">
           <Slider {...settings} ref={sliderRef}>
             {NewsData.map((item, idx) => (
-              <div key={idx} className="px-6">
+              <div key={idx} className="px-2 sm:px-4">
                 {item.image ? (
-                  <div className=" h-[400px] rounded-xl flex flex-col justify-between relative opacity-75">
+                  <div className="h-[400px] rounded-xl flex flex-col justify-between relative">
                     <img
                       src={item.image}
                       alt={`News ${idx + 1}`}
                       className="rounded-xl w-full h-full object-cover bg-[#6b6b6b]"
                     />
-                    <div className="absolute">
-                      <h2 className="text-white text-2xl text-center mt-20 font-medium">
+                    <div className="absolute top-10 left-0 right-0 px-4">
+                      <h2 className="text-white text-lg sm:text-2xl text-center font-medium">
                         {item.title}
                       </h2>
-                      <div className="flex items-center gap-3 mx-auto ml-30 mt-10">
+                      <div className="flex items-center gap-3 justify-center mt-6">
                         <img
                           src={item.logo}
                           alt="author"
-                          className="w-13 h-13 rounded-full"
+                          className="w-10 h-10 sm:w-13 sm:h-13 rounded-full"
                         />
-                        <p className="text-base font-medium text-[#fff] -mb-18 -ml-18 text-center">
+                        <p className="text-sm sm:text-base font-medium text-white">
                           {item.logoTitle}
                         </p>
                       </div>
@@ -91,20 +95,20 @@ const LatestNews = () => {
                   </div>
                 ) : (
                   <div className="shadow-md h-[400px] rounded-xl p-4 flex flex-col justify-between">
-                    <p className=" leading-6 mt-3 text-base mx-2">
+                    <p className="leading-6 mt-3 text-sm sm:text-base mx-2">
                       {item.description}
                     </p>
-                    <div className="flex items-center gap-3 mt-7 mx-auto">
+                    <div className="flex items-center gap-3 mt-7 justify-center">
                       <img
                         src={item.logo}
                         alt="author"
-                        className="w-13 h-13 rounded-full"
+                        className="w-10 h-10 sm:w-13 sm:h-13 rounded-full"
                       />
                     </div>
-                    <p className="text-base text-[#333] mb-20 text-center">
+                    <p className="text-sm sm:text-base text-[#333] mb-4 text-center">
                       {item.logoTitle}
                     </p>
-                    <Button className="h-[70px] w-[120px] -mt-15 mx-auto rounded-4xl">
+                    <Button className="h-[50px] w-[100px] sm:h-[70px] sm:w-[120px] mx-auto rounded-4xl">
                       Read More
                     </Button>
                   </div>
@@ -113,13 +117,13 @@ const LatestNews = () => {
             ))}
           </Slider>
           <div
-            className="h-11 w-11 bg-[#f0e9f7] flex justify-center items-center rounded-full -mt-60 -ml-5 hover:cursor-pointer"
+            className="hidden sm:flex h-11 w-11 bg-[#f0e9f7] justify-center items-center rounded-full absolute top-1/2 -left-6 transform -translate-y-1/2 cursor-pointer"
             onClick={handleLeft}
           >
             <GoChevronLeft className="text-[#8d23c7]" size={20} />
           </div>
           <div
-            className="h-11 w-11 bg-[#f0e9f7] flex justify-center items-center rounded-full ml-275 -mt-10 mr-3 hover:cursor-pointer"
+            className="hidden sm:flex h-11 w-11 bg-[#f0e9f7] justify-center items-center rounded-full absolute top-1/2 -right-6 transform -translate-y-1/2 cursor-pointer"
             onClick={handleNext}
           >
             <GoChevronRight className="text-[#8d23c7]" size={20} />

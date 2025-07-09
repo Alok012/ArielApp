@@ -18,97 +18,99 @@ const ScreenShot = () => {
   const [centerSlideIndex, setCenterSlideIndex] = useState(2);
 
   return (
-    <>
-      <div className="relative">
+    <div className="relative pt-28 sm:pt-36 pb-20 overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-full z-0">
         <BgScreenshot />
-        <div className="absolute top-100 left-30">
-          <h1 className="text-4xl text-center">App Screenshots</h1>
+      </div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4">
 
-          <div className="text-[#77838f] text-center mt-5 leading-6 text-base">
-            <p>
-              Efficiently syndicate flexible content via cost effective
-              initiatives completely leverage vertical quality.
-              <br />
-              Turn your mobile visitors into your best customers.
-            </p>
-          </div>
-
-          <div className="w-[90%] flex justify-center mt-15 h-auto mx-auto">
-            <div className="w-full max-w-7xl px-4 relative">
-              <Slider
-                dots={true}
-                infinite={true}
-                speed={500}
-                slidesToShow={5}
-                slidesToScroll={1}
-                autoplay={true}
-                autoplaySpeed={2000}
-                arrows={false}
-                afterChange={(currentSlide) => {
-                  setCenterSlideIndex(currentSlide + 2);
-                }}
-                responsive={[
-                  {
-                    breakpoint: 1280,
-                    settings: { slidesToShow: 5 },
-                  },
-                  {
-                    breakpoint: 1024,
-                    settings: { slidesToShow: 4 },
-                  },
-                  {
-                    breakpoint: 768,
-                    settings: { slidesToShow: 3 },
-                  },
-                  {
-                    breakpoint: 640,
-                    settings: { slidesToShow: 2 },
-                  },
-                  {
-                    breakpoint: 480,
-                    settings: { slidesToShow: 1 },
-                  },
-                ]}
-              >
-                {ImageUrls.map((imageUrl, idx) => {
-                  const isCenter = idx === centerSlideIndex;
-
-                  return (
-                    <div
-                      key={idx}
-                      className="flex items-center justify-center mt-2 relative px-3"
-                    >
-                      <Image
-                        src={imageUrl}
-                        alt={`imageUrl ${idx + 1}`}
-                        width={isCenter ? 280 : 250}
-                        height={isCenter ? 445 : 250}
-                        unoptimized={true}
-                        className={`rounded-2xl transition-all duration-300 ${
-                          isCenter
-                            ? "w-[290px] h-[445px] object-cover z-20  relative"
-                            : "object-contain min-h-[280px]"
-                        }`}
-                      />
-                    </div>
-                  );
-                })}
-              </Slider>
-
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 mt-4 z-30 pointer-events-none">
-                <Image
-                  src="https://elmanawy.info/demo/ariel/ltr/images/screen/phone.png"
-                  alt="Overlay"
-                  width={250}
-                  height={460}
-                  className="h-[470px] w-[250px] object-contain -mt-5"
-                />
-              </div>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl text-center font-semibold text-[#333]">
+          App Screenshots
+        </h1>
+        <div className="text-[#77838f] text-center mt-4 sm:mt-5 leading-6 text-sm sm:text-base">
+          <p>
+            Efficiently syndicate flexible content via cost effective
+            initiatives.
+            <br />
+            Turn your mobile visitors into your best customers.
+          </p>
+        </div>
+        <div className="w-full flex justify-center mt-16">
+          <div className="w-full max-w-6xl px-2 sm:px-4 relative">
+   
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-[52%] z-20 pointer-events-none">
+              <Image
+                src="https://elmanawy.info/demo/ariel/ltr/images/screen/phone.png"
+                alt="Phone Overlay"
+                width={250}
+                height={460}
+                className="hidden sm:block object-contain w-[180px] sm:w-[200px] md:w-[230px] lg:w-[250px] h-auto"
+              />
             </div>
+
+            <Slider
+              dots={true}
+              infinite={true}
+              speed={500}
+              slidesToShow={5}
+              slidesToScroll={1}
+              autoplay={true}
+              autoplaySpeed={2000}
+              arrows={false}
+              afterChange={(currentSlide) => {
+                setCenterSlideIndex(currentSlide + 2);
+              }}
+              responsive={[
+                {
+                  breakpoint: 1280,
+                  settings: { slidesToShow: 5 },
+                },
+                {
+                  breakpoint: 1024,
+                  settings: { slidesToShow: 3 },
+                },
+                {
+                  breakpoint: 768,
+                  settings: { slidesToShow: 3 },
+                },
+                {
+                  breakpoint: 640,
+                  settings: { slidesToShow: 2 },
+                },
+                {
+                  breakpoint: 480,
+                  settings: { slidesToShow: 1 },
+                },
+              ]}
+            >
+              {ImageUrls.map((imageUrl, idx) => {
+                const isCenter = idx === centerSlideIndex;
+
+                return (
+                  <div
+                    key={idx}
+                    className="flex items-center justify-center px-2 sm:px-3"
+                  >
+                    <Image
+                      src={imageUrl}
+                      alt={`App Screenshot ${idx + 1}`}
+                      width={isCenter ? 280 : 240}
+                      height={isCenter ? 445 : 250}
+                      unoptimized
+                      className={`rounded-2xl transition-all duration-300 ${
+                        isCenter
+                          ? "w-[280px] h-[445px] z-10 relative object-cover"
+                          : "object-contain min-h-[260px]"
+                      }`}
+                    />
+                  </div>
+                );
+              })}
+            </Slider>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
