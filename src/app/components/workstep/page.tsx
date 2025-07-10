@@ -3,7 +3,7 @@ import React from "react";
 
 const WorkStep = () => {
   return (
-    <div className="w-full max-w-[90%] lg:max-w-[80%] mx-auto px-4 py-10">
+    <div className="w-full max-w-[90%] lg:max-w-[80%] mx-auto px-4 py-10 mt-10">
       <div>
         <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-center">
           How it Works

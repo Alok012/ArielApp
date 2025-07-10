@@ -8,12 +8,12 @@ import Square from "../../../assets/portfolio.png";
 
 const Features = () => {
   return (
-    <div className="bg-[#f8f9fb] py-16 px-4">
+    <div className="bg-gradient-to-b from-[#ffffff] to-[#f8f9fb] mt-64">
       <div className="text-center">
         <h1 className="text-3xl sm:text-4xl font-[Poppins] -mt-10">
           Core Features
         </h1>
-        <div className="w-full sm:w-[90%] md:w-[70%] lg:w-[50%] mx-auto mt-5 text-[#77838f] text-base">
+        <div className="w-full sm:w-[100%] md:w-[70%] lg:w-[50%] mx-auto mt-5 text-[#77838f] text-base">
           <p className="leading-6 font-light">
             Efficiently syndicate flexible content via cost effective
             initiatives completely leverage vertical quality.

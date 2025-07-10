@@ -25,7 +25,7 @@ const questions = [
 const AskedQuestions = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   return (
-    <div className="px-4 py-12 sm:px-6 lg:px-20 max-w-7xl mx-auto">
+    <div className="px-4 py-12 -mt-30 sm:px-6 lg:px-20 max-w-7xl mx-auto">
       <div className="text-center max-w-3xl mx-auto">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-[#333]">
           Frequently Asked Questions
@@ -51,13 +51,13 @@ const AskedQuestions = () => {
           {questions.map((item, idx) => (
             <div key={idx} className="mb-6">
               <Button
-                className="w-full sm:w-[500px] h-[50px] rounded-3xl text-left px-6 mb-2 text-sm sm:text-base font-medium hover:cursor-pointer bg-[#f9f9f9]"
+                className="w-full mx-4 md:mx-30 sm:w-[500px] h-[50px] rounded-3xl text-left px-6 mb-2 text-sm sm:text-base font-medium hover:cursor-pointer bg-[#f9f9f9]"
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
               >
                 {item.q}
               </Button>
               {openIndex === idx && (
-                <p className="mt-3 text-[#555] text-sm sm:text-base px-4">
+                <p className="mt-3 mx-4 md:mx-30 w-[92%] text-[#555] text-sm sm:text-base px-4">
                   {item.a}
                 </p>
               )}

@@ -5,7 +5,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="relative w-[900px] h-[1000px]">
+    <div className="">
       <Image
         src="https://elmanawy.info/demo/ariel/ltr/images/shapes/banner_bg.png"
         alt="bg-img"
@@ -15,7 +15,7 @@ const Navbar = () => {
       />
 
       <div className="absolute top-0 left-0 w-full z-[1000]">
-        <nav className="fixed w-full bg-[#eee9fe] shadow-md z-[1000]">
+        <nav className="fixed w-full bg-[#eee9fe] ">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-20">
               <div className="flex">
@@ -75,7 +75,7 @@ const Navbar = () => {
 
           {menuOpen && (
             <div className="md:hidden bg-[#eee9fe] px-4 pb-4 pt-2">
-              <ul className="flex flex-col gap-2 text-sm font-[Poppins]">
+              <ul className="flex flex-col gap-2 text-lg font-[Poppins]">
                 <li className="cursor-pointer">HOME</li>
                 <li className="cursor-pointer">PAGES</li>
                 <li className="cursor-pointer">BLOG</li>

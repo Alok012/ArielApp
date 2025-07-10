@@ -53,7 +53,7 @@ const Plans = () => {
 
       <div className="w-[300px] relative shadow-md rounded-2xl">
         <PlansBgImage />
-        <div className="absolute -mt-55 text-white text-2xl ml-16 font-medium">
+        <div className="absolute -mt-60 text-white text-2xl ml-16 lg:ml-8 xl:ml-16 font-medium ">
           <h2 className="">Individual Plan</h2>
           <BsCurrencyDollar className="mt-2 relative" size={15} />
           <div className="flex items-end absolute -mt-5 ml-4">
@@ -86,7 +86,7 @@ const Plans = () => {
 
       <div className="w-[300px] max-w-sm relative shadow-md rounded-2xl">
         <PlansBgImage />
-        <div className="absolute -mt-55 text-white text-2xl ml-16 font-medium">
+        <div className="absolute -mt-60 text-white text-2xl ml-16 lg:ml-8 xl:ml-16 font-medium">
           <h2 className="">Enterprise Plan</h2>
           <BsCurrencyDollar className="mt-2 relative" size={15} />
           <div className="flex items-end absolute -mt-5 ml-4">

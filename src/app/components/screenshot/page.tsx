@@ -94,12 +94,12 @@ const ScreenShot = () => {
                     <Image
                       src={imageUrl}
                       alt={`App Screenshot ${idx + 1}`}
-                      width={isCenter ? 280 : 240}
+                      width={isCenter ? 285 : 240}
                       height={isCenter ? 445 : 250}
                       unoptimized
-                      className={`rounded-2xl transition-all duration-300 ${
+                      className={`rounded-2xl transition-all duration-300 ml-8 lg:ml-0 ${
                         isCenter
-                          ? "w-[280px] h-[445px] z-10 relative object-cover"
+                          ? " w-[280px] h-[445px] z-10 relative object-cover"
                           : "object-contain min-h-[260px]"
                       }`}
                     />

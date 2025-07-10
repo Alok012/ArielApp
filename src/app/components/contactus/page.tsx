@@ -34,7 +34,7 @@ const ContactUs = () => {
       {/* Left Info Section */}
       <div className="w-full lg:w-[40%] ml-30">
         <h1 className="text-2xl font-medium text-[#333]">Find Us There</h1>
-        <p className="text-[#77838f] mt-4">
+        <p className="text-[#77838f] mt-4 w-90 md:w-140">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore omnis
           quaerat nostrum.
         </p>
@@ -91,10 +91,10 @@ const ContactUs = () => {
           className="w-full h-auto max-w-[600px]"
         />
         {/* Contact form box */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[60%] shadow-2xl rounded-4xl bg-white w-[90%] sm:w-[85%] md:w-[75%] lg:w-[450px] p-6">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 mt-40 md:mt-10 lg:mb-5 xl:-mt-2 -translate-y-[60%] shadow-2xl rounded-4xl bg-white w-[90%] sm:w-[85%] md:w-[75%] lg:w-[450px] p-6">
           <form onSubmit={handleSubmit}>
-            <h1 className="text-[#333] text-2xl font-medium">
-              Let's Talk About Your Idea
+            <h1 className="text-[#333] text-2xl mt-3 font-medium">
+              Let&apos Talk About Your Idea
             </h1>
             <p className="text-[#77838f] mt-4 mb-4 text-sm">
               Check these testimonials from our satisfied customers!

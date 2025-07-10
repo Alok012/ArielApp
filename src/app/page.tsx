@@ -9,20 +9,20 @@ import Plans from "./components/plans/page";
 import Reviews from "./components/reviews/page";
 import ScreenShot from "./components/screenshot/page";
 import WorkStep from "./components/workstep/page";
+
 export default function Home() {
   return (
     <div>
-      {/* <Navbar />
-      <Homepage/> */}
-      {/* <Features />
-      <WorkStep /> */}
-      {/* <ScreenShot /> */}
-      {/* <Plans /> */}
-      {/* <PlansBgImage/> */}
-      {/* <Reviews /> */}
-      {/* <AskedQuestions /> */}
-      {/* <LatestNews /> */}
-      {/* <ContactUs /> */}
+      <Navbar />
+      <Homepage />
+      <Features /> 
+      <WorkStep />
+      <ScreenShot />
+      <Plans />
+      <Reviews />
+      <AskedQuestions />
+      <LatestNews />
+      <ContactUs /> 
       <Footer />
     </div>
   );

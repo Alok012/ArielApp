@@ -60,7 +60,7 @@ const LatestNews = () => {
           Read Our Latest News
         </h1>
         <p className="text-[#77838f] max-w-[500px] mx-auto mt-3 text-sm sm:text-[16px] leading-6">
-          Our duty towards you is to share our experience we're reaching in our
+          Our duty towards you is to share our experience we&aposre reaching in our
           work path with you.
         </p>
       </div>
@@ -75,13 +75,14 @@ const LatestNews = () => {
                     <img
                       src={item.image}
                       alt={`News ${idx + 1}`}
+                      
                       className="rounded-xl w-full h-full object-cover bg-[#6b6b6b]"
                     />
-                    <div className="absolute top-10 left-0 right-0 px-4">
+                    <div className="absolute top-15 left-0 right-0 px-4">
                       <h2 className="text-white text-lg sm:text-2xl text-center font-medium">
                         {item.title}
                       </h2>
-                      <div className="flex items-center gap-3 justify-center mt-6">
+                      <div className=" items-center gap-3 justify-center mt-10 ml-28">
                         <img
                           src={item.logo}
                           alt="author"
@@ -108,7 +109,7 @@ const LatestNews = () => {
                     <p className="text-sm sm:text-base text-[#333] mb-4 text-center">
                       {item.logoTitle}
                     </p>
-                    <Button className="h-[50px] w-[100px] sm:h-[70px] sm:w-[120px] mx-auto rounded-4xl">
+                    <Button className="h-[50px] w-[100px] sm:h-[50px] sm:w-[120px] mx-auto rounded-4xl">
                       Read More
                     </Button>
                   </div>
