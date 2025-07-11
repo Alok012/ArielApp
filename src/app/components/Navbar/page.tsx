@@ -1,8 +1,24 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { HiOutlineMenu } from "react-icons/hi";
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="">
@@ -11,11 +27,15 @@ const Navbar = () => {
         alt="bg-img"
         height={900}
         width={1000}
-        className="object-cover transform scale-x-[-1] "
+        className="object-cover transform scale-x-[-1]"
       />
 
       <div className="absolute top-0 left-0 w-full z-[1000]">
-        <nav className="fixed w-full bg-[#eee9fe] ">
+        <nav
+          className={`fixed w-full h-18 -mt-1 ${
+            isScrolled ? "bg-[#eee9fe]" : "bg-transparent"
+          } transition-colors duration-300`}
+        >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-20">
               <div className="flex">
@@ -28,7 +48,7 @@ const Navbar = () => {
                 />
               </div>
 
-              <ul className="hidden md:flex gap-6 text-sm font-[Poppins]">
+              <ul className="hidden md:flex gap-6 text-sm font-[Poppins] mr-10  text-[#333]">
                 <li className="cursor-pointer">HOME</li>
                 <li className="cursor-pointer">PAGES</li>
                 <li className="cursor-pointer">BLOG</li>
@@ -46,28 +66,9 @@ const Navbar = () => {
                   onClick={() => setMenuOpen(!menuOpen)}
                   className="text-black focus:outline-none"
                 >
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    {menuOpen ? (
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M6 18L18 6M6 6l12 12"
-                      />
-                    ) : (
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M4 6h16M4 12h16M4 18h16"
-                      />
-                    )}
-                  </svg>
+                  <div className="border border-[#8d23c7] h-9 w-9 rounded flex items-center justify-center">
+                    <HiOutlineMenu className="w-8 h-8 text-[#8d23c7]" />
+                  </div>
                 </button>
               </div>
             </div>
@@ -75,7 +76,7 @@ const Navbar = () => {
 
           {menuOpen && (
             <div className="md:hidden bg-[#eee9fe] px-4 pb-4 pt-2">
-              <ul className="flex flex-col gap-2 text-lg font-[Poppins]">
+              <ul className="flex flex-col gap-2 text-lg font-[Poppins] text-[#333]">
                 <li className="cursor-pointer">HOME</li>
                 <li className="cursor-pointer">PAGES</li>
                 <li className="cursor-pointer">BLOG</li>

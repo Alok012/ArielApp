@@ -15,12 +15,12 @@ export default function Home() {
     <div>
       <Navbar />
       <Homepage />
-      <Features /> 
+       <Features /> 
       <WorkStep />
       <ScreenShot />
-      <Plans />
+       <Plans />
       <Reviews />
-      <AskedQuestions />
+       <AskedQuestions />
       <LatestNews />
       <ContactUs /> 
       <Footer />

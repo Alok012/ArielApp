@@ -60,7 +60,7 @@ const LatestNews = () => {
           Read Our Latest News
         </h1>
         <p className="text-[#77838f] max-w-[500px] mx-auto mt-3 text-sm sm:text-[16px] leading-6">
-          Our duty towards you is to share our experience we&aposre reaching in our
+          Our duty towards you is to share our experience we&apos;re reaching in our
           work path with you.
         </p>
       </div>

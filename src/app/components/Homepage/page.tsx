@@ -1,14 +1,16 @@
+"use client"
 import Image from "next/image";
 import { FaPlay } from "react-icons/fa";
 const Homepage = () => {
+
   return (
       <div className="flex -ml-30 md:ml-5 -mt-60 md:-mt-120 lg:-mt-160  lg:ml-0">
-        <div className="mx-40 mt-10 w-120">
-          <h2 className="text-[#00c9a7] font-bold text-2xl ">
+        <div className="mx-40 mt-10 w-120 md:ml-10 xl:ml-40">
+          <h2 className="text-[#00c9a7] font-medium text-xl ">
             Build Your Brand Automate Your App!
           </h2>
           <div>
-            <h2 className="text-[#7b43ee] text-4xl font-bold mt-4">
+            <h2 className="bg-gradient-to-r from-[#8d23c7] to-[#774cf9] bg-clip-text text-transparent text-4xl font-bold mt-4">
               Smart Apps for Smart Life!
             </h2>
             <p className="mt-4 text-gray-500 text-base leading-7">
@@ -18,6 +20,7 @@ const Homepage = () => {
             </p>
           </div>
           <div className="mt-10 flex">
+
             <button className="h-12 w-45 border rounded-3xl bg-linear-to-r from-[#8d23c7] to-[#774cf9] text-white">
               Get Started Now
             </button>

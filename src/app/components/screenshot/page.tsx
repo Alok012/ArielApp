@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BgScreenshot from "../bgScreenshot/page";
 import Image from "next/image";
 import Slider from "react-slick";
@@ -16,18 +16,30 @@ const ImageUrls = [
 
 const ScreenShot = () => {
   const [centerSlideIndex, setCenterSlideIndex] = useState(2);
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1350);
+    };
 
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
-    <div className="relative pt-28 sm:pt-36 pb-20 overflow-hidden">
+    <div className="relative pt-28 sm:pt-36 mt-10 md:mt-20  pb-20 overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full z-0">
-        <BgScreenshot />
+        {!isMobile ? (
+          <BgScreenshot />
+        ) : (
+          <div className="bg-[#f8f9fb] w-full h-full"></div>
+        )}{" "}
       </div>
-      <div className="relative z-10 max-w-7xl mx-auto px-4">
-
-        <h1 className="text-2xl sm:text-3xl md:text-4xl text-center font-semibold text-[#333]">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 -mt-12 lg:-mt-20">
+        <h1 className="text-4xl sm:text-4xl md:text-4xl text-center font-semibold text-[#333]">
           App Screenshots
         </h1>
-        <div className="text-[#77838f] text-center mt-4 sm:mt-5 leading-6 text-sm sm:text-base">
+        <div className="text-[#77838f] text-center mt-7 sm:mt-5 leading-6 text-sm sm:text-base">
           <p>
             Efficiently syndicate flexible content via cost effective
             initiatives.
@@ -37,14 +49,13 @@ const ScreenShot = () => {
         </div>
         <div className="w-full flex justify-center mt-16">
           <div className="w-full max-w-6xl px-2 sm:px-4 relative">
-   
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-[52%] z-20 pointer-events-none">
+            <div className=" absolute ml-20 z-20 pointer-events-none md:ml-80 lg:ml-86 xl:ml-112">
               <Image
                 src="https://elmanawy.info/demo/ariel/ltr/images/screen/phone.png"
                 alt="Phone Overlay"
                 width={250}
-                height={460}
-                className="hidden sm:block object-contain w-[180px] sm:w-[200px] md:w-[230px] lg:w-[250px] h-auto"
+                height={470}
+                className=" object-contain w-[260px] sm:w-[100px] h-[445px] md:w-[230px] lg:w-[228px] xl:w-[228px]"
               />
             </div>
 
@@ -97,10 +108,10 @@ const ScreenShot = () => {
                       width={isCenter ? 285 : 240}
                       height={isCenter ? 445 : 250}
                       unoptimized
-                      className={`rounded-2xl transition-all duration-300 ml-8 lg:ml-0 ${
+                      className={`rounded-2xl transition-all duration-300 ml-20 lg:ml-0 ${
                         isCenter
-                          ? " w-[280px] h-[445px] z-10 relative object-cover"
-                          : "object-contain min-h-[260px]"
+                          ? " w-[260px] h-[435px] z-10 relative object-cover"
+                          : "object-contain h-[426px] mt-3"
                       }`}
                     />
                   </div>

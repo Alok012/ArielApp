@@ -48,10 +48,11 @@ const Plans = () => {
               YEARLY
             </button>
           </div>
+          <div className="w-18 font-medium text-sm h-8 border absolute bg-[#00c9a7] rounded-4xl text-white flex justify-center items-center -mt-16 ml-52">10% Off</div>
         </div>
       </div>
 
-      <div className="w-[300px] relative shadow-md rounded-2xl">
+      <div className="w-[300px] relative shadow-md rounded-2xl ml-0 lg:-ml-15">
         <PlansBgImage />
         <div className="absolute -mt-60 text-white text-2xl ml-16 lg:ml-8 xl:ml-16 font-medium ">
           <h2 className="">Individual Plan</h2>
