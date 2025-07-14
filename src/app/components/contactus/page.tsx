@@ -32,9 +32,9 @@ const ContactUs = () => {
   return (
     <div className="mt-20 px-4 flex flex-col lg:flex-row items-center lg:items-start gap-10">
       {/* Left Info Section */}
-      <div className="w-full lg:w-[40%] ml-5 lg:ml-30">
+      <div className="w-full lg:w-[30%] ml-5 lg:ml-36">
         <h1 className="text-2xl font-medium text-[#333]">Find Us There</h1>
-        <p className="text-[#77838f] mt-4 w-90 md:w-140">
+        <p className="text-[#77838f] mt-4 w-90 md:w-140 lg:w-130">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore omnis
           quaerat nostrum.
         </p>
@@ -83,7 +83,7 @@ const ContactUs = () => {
       </div>
 
       {/* Right Form Section  */}
-      <div className="w-full lg:w-[60%] relative flex justify-center">
+      <div className="w-full lg:w-[60%] relative flex justify-center ml-8  lg:-ml-10  ">
         <Image
           src="https://elmanawy.info/demo/ariel/ltr/images/shapes/contact-form.png"
           alt="contact-bg"
@@ -91,7 +91,7 @@ const ContactUs = () => {
           height={650}
           className="w-full h-auto max-w-[600px]"
         />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 mt-40 md:mt-10 lg:mb-5 xl:-mt-2 -translate-y-[60%] shadow-2xl rounded-4xl bg-white w-[90%] ml-4 md:ml-0 sm:w-[85%] md:w-[75%] lg:w-[450px] p-6">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 mt-40 md:mt-10 lg:mt-4   xl:-mt-2 -translate-y-[48%] shadow-2xl rounded-4xl bg-white w-[90%] -ml-2 md:ml-0 lg:ml-36 xl:ml-16 h-[600px] sm:w-[85%] md:w-[75%] lg:w-[550px] p-10">
           <form onSubmit={handleSubmit}>
             <h1 className="text-[#333] text-2xl mt-3 font-medium">
               Let&apos;s Talk About Your Idea
@@ -104,26 +104,26 @@ const ContactUs = () => {
               type="text"
               name="name"
               placeholder="Your Name"
-              className="pl-4 rounded-4xl border border-gray-300 focus:outline-none focus:border-[#901ec1] h-10 w-full my-2"
+              className="pl-4 rounded-4xl border border-gray-300 focus:outline-none focus:border-[#901ec1] h-10 w-full my-4"
             />
             <input
               type="email"
               name="email"
               placeholder="Your Email"
-              className="pl-4 rounded-4xl border border-gray-300 focus:outline-none focus:border-[#901ec1] h-10 w-full my-2"
+              className="pl-4 rounded-4xl border border-gray-300 focus:outline-none focus:border-[#901ec1] h-10 w-full my-4"
             />
             <input
               type="tel"
               name="phone"
               placeholder="Your Phone"
-              className="pl-4 rounded-4xl border border-gray-300 focus:outline-none focus:border-[#901ec1] h-10 w-full my-2"
+              className="pl-4 rounded-4xl border border-gray-300 focus:outline-none focus:border-[#901ec1] h-10 w-full my-4"
             />
             <textarea
               name="message"
               placeholder="Your Message"
-              className="pl-4 rounded-4xl border border-gray-300 focus:outline-none focus:border-[#901ec1] h-20 w-full my-2"
+              className="p-2 pl-6 rounded-4xl border border-gray-300 focus:outline-none focus:border-[#901ec1] h-20 w-full my-4"
             />
-            <div className="flex justify-start mt-6">
+            <div className="flex justify-start mt-2  md:mt-6 ml-2">
               <Button className="h-12 w-40 rounded-4xl">Send Message</Button>
             </div>
           </form>

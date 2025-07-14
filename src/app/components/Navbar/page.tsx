@@ -21,14 +21,17 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="">
-      <Image
+    <div className="w-full">
+      <div className="w-full h-full">
+     <Image
         src="https://elmanawy.info/demo/ariel/ltr/images/shapes/banner_bg.png"
         alt="bg-img"
         height={900}
         width={1000}
-        className="object-cover transform scale-x-[-1]"
+        className="object-cover transform scale-x-[-1] "
       />
+      </div>
+ 
 
       <div className="absolute top-0 left-0 w-full z-[1000]">
         <nav
@@ -36,15 +39,15 @@ const Navbar = () => {
             isScrolled ? "bg-[#eee9fe]" : "bg-transparent"
           } transition-colors duration-300`}
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-20">
-              <div className="flex">
+              <div className="  sm:block md:hidden lg:block">
                 <Image
                   src="https://elmanawy.info/demo/ariel/ltr/images/logo-2.png"
                   alt="logo"
                   width={160}
                   height={160}
-                  className="h-auto w-40"
+                  className="h-auto w-40 ml-10 lg:-ml-6 xl:ml-20"
                 />
               </div>
 
@@ -75,7 +78,7 @@ const Navbar = () => {
           </div>
 
           {menuOpen && (
-            <div className="md:hidden bg-[#eee9fe] px-4 pb-4 pt-2">
+            <div className="md:hidden bg-[#eee9fe] px-4 pb-2 pt-2">
               <ul className="flex flex-col gap-2 text-lg font-[Poppins] text-[#333]">
                 <li className="cursor-pointer">HOME</li>
                 <li className="cursor-pointer">PAGES</li>

@@ -50,8 +50,8 @@ const testimonials = [
 ];
 const Reviews = () => {
   const [isMobile, setIsMobile] = useState(true);
-  const sliderRef = useRef<Slider | null>(null);
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const textSliderRef = useRef<Slider | null>(null);
+  const avatarSliderRef = useRef<Slider | null>(null);
 
   const settings = {
     dots: false,
@@ -60,7 +60,7 @@ const Reviews = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    afterChange: (index: number) => setCurrentSlide(index),
+    // afterChange: (index: number) => setCurrentSlide(index),
   };
 
   useEffect(() => {
@@ -74,17 +74,19 @@ const Reviews = () => {
   }, []);
 
   const handleLeft = () => {
-    sliderRef.current?.slickPrev();
+    textSliderRef.current?.slickPrev();
+    avatarSliderRef.current?.slickPrev();
   };
 
   const handleNext = () => {
-    sliderRef.current?.slickNext();
+    textSliderRef.current?.slickNext();
+    avatarSliderRef.current?.slickNext();
   };
 
   if (isMobile) {
     return (
       <div className="bg-white py-12 px-4 sm:px-6 mt-10">
-        <div className="max-w-xl mx-auto text-center text-[#333]">
+        <div className="w-full text-center text-[#333]">
           <h1 className="text-2xl sm:text-3xl font-semibold">
             What Our Customers Say!
           </h1>
@@ -99,13 +101,19 @@ const Reviews = () => {
               onClick={handleLeft}
               className="h-10 w-10 bg-[#f0e9f7] flex justify-center items-center rounded-full hover:cursor-pointer hover:bg-gradient-to-r from-[#8d23c7] to-[#774cf9]"
             >
-              <GoChevronLeft className="text-[#8d23c7] hover:text-white" size={18} />
+              <GoChevronLeft
+                className="text-[#8d23c7] hover:text-white"
+                size={18}
+              />
             </button>
             <button
               onClick={handleNext}
               className="h-10 w-10 bg-[#f0e9f7] hover:cursor-pointer hover:bg-gradient-to-r from-[#8d23c7] to-[#774cf9] flex justify-center items-center rounded-full"
             >
-              <GoChevronRight className="text-[#8d23c7] hover:text-white" size={18} />
+              <GoChevronRight
+                className="text-[#8d23c7] hover:text-white"
+                size={18}
+              />
             </button>
           </div>
 
@@ -114,13 +122,13 @@ const Reviews = () => {
           </button>
         </div>
 
-        <div className="max-w-md mx-auto text-center mt-12 ">
-          <Slider {...settings} ref={sliderRef}>
+        <div className="w-full text-center mt-12 ">
+          <Slider {...settings} ref={textSliderRef}>
             {testimonials.map((testimonial, idx) => (
               <div key={idx} className="text-center px-4">
-                <RiDoubleQuotesL className="text-[#e3cdf0] mx-auto" size={70} />
-                <p className="text-base w-full max-w-xl mx-auto mt-3 text-[#77838f] leading-7 font-normal">
-                  "{testimonial.text}"
+                <RiDoubleQuotesL className="text-[#e3cdf0] mxauto" size={70} />
+                <p className="text-base w-full mt-3 text-[#77838f] leading-7 font-normal">
+                  {testimonial.text}
                 </p>
                 <h1 className="text-xl font-[Poppins] font-semibold text-[#333] mt-4">
                   {testimonial.name}
@@ -129,7 +137,7 @@ const Reviews = () => {
                   {testimonial.role}
                 </h2>
 
-                <div className="flex mt-10 gap-4  justify-evenly ">
+                {/* <div className="flex mt-10 gap-4  justify-evenly ">
                   {testimonial.images.map((img, i) => (
                     <div
                       key={i}
@@ -148,13 +156,44 @@ const Reviews = () => {
                       />
                     </div>
                   ))}
-                </div>
+                </div> */}
               </div>
             ))}
           </Slider>
         </div>
+        <div className="relative">
+          <div className="mt-10 flex justify-center">
+            <Slider
+              ref={avatarSliderRef}
+              dots={false}
+              infinite={true}
+              speed={500}
+              slidesToShow={3}
+              slidesToScroll={1}
+              autoplay={false}
+              arrows={false}
+              className="w-full"
+            >
+              {testimonials[0]?.images.map((img: string, i: number) => (
+                <div key={i} className="px-12">
+                  <div className="h-20 w-20 rounded-full overflow-hidden">
+                    <Image
+                      src={img}
+                      alt={`review-avatar-${i}`}
+                      width={80}
+                      height={80}
+                      className={`rounded-full object-cover transition-opacity duration-300 ${
+                        i === 1 ? "opacity-100" : "opacity-25"
+                      }`}
+                    />
+                  </div>
+                </div>
+              ))}
+            </Slider>
+          </div>
+        </div>
 
-        <div className="mt-12 max-w-full px-4">
+        <div className="mt-12 w-full px-4">
           <Slider
             dots={false}
             infinite={true}
@@ -168,7 +207,7 @@ const Reviews = () => {
             {CompanyLogo.map((logo, idx) => (
               <div
                 key={idx}
-                className="flex items-center justify-center px-4 mx-auto"
+                className="flex items-center justify-center px-4"
               >
                 <Image
                   src={logo}
@@ -193,7 +232,9 @@ const Reviews = () => {
         <BgScreenshot />
       </div>
       <div className="absolute -mt-225  ml-50 text-[#333] h-40 w-100">
-        <h1 className="text-3xl">What Our Customers Say!</h1>
+        <h1 className="text-3xl font-semibold text-[#333]">
+          What Our Customers Says!
+        </h1>
         <p className="text-[#77838f] text-base mt-5 leading-7 font-normal">
           Don&apos;t just believe our words.
           <br />
@@ -201,32 +242,38 @@ const Reviews = () => {
         </p>
         <div className="flex gap-2 mt-8">
           <div
-            className="h-11 w-11 bg-[#f0e9f7]  flex justify-center items-center rounded-full hover:cursor-pointer hover:bg-gradient-to-r from-[#8d23c7] to-[#774cf9]"
+            className="group h-11 w-11 bg-[#f0e9f7] group-hover:text-white flex justify-center items-center rounded-full hover:cursor-pointer hover:bg-gradient-to-r from-[#8d23c7] to-[#774cf9]"
             onClick={handleLeft}
           >
-            <GoChevronLeft className="text-[#8d23c7] hover:text-white " size={20} />
+            <GoChevronLeft
+              className="text-[#8d23c7] group-hover:text-white "
+              size={20}
+            />
           </div>
           <div
-            className="h-11 w-11 bg-[#f0e9f7] flex  justify-center items-center rounded-full hover:cursor-pointer hover:bg-gradient-to-r from-[#8d23c7] to-[#774cf9]"
+            className="group h-11 w-11 bg-[#f0e9f7] flex group-hover:text-white  justify-center items-center rounded-full hover:cursor-pointer hover:bg-gradient-to-r from-[#8d23c7] to-[#774cf9]"
             onClick={handleNext}
           >
-            <GoChevronRight className="text-[#8d23c7] hover:text-white" size={20} />
+            <GoChevronRight
+              className="text-[#8d23c7] group-hover:text-white"
+              size={20}
+            />
           </div>
         </div>
         <div className="mt-10 flex">
-          <button className="h-12 w-45 border rounded-3xl bg-gradient-to-r from-[#8d23c7] to-[#774cf9] text-white">
+          <button className="h-12 w-45  rounded-3xl bg-gradient-to-r from-[#8d23c7] to-[#774cf9] text-white hover:cursor-pointer">
             View All Reviews
           </button>
         </div>
       </div>
 
       <div className="absolute -mt-245 ml-180  w-[600px]">
-        <Slider {...settings} ref={sliderRef}>
+        <Slider {...settings} ref={textSliderRef}>
           {testimonials.map((testimonial, idx) => (
-            <div key={idx} className="text-center px-4">
+            <div key={idx} className="text-center px-4 ">
               <RiDoubleQuotesL className="text-[#e3cdf0] mx-auto" size={70} />
-              <p className="text-base w-full max-w-xl mx-auto mt-3 text-[#77838f] leading-7 font-normal">
-                "{testimonial.text}"
+              <p className="text-base w-full mt-3 text-[#77838f] leading-7 font-normal">
+                {testimonial.text}
               </p>
               <h1 className="text-xl font-[Poppins] font-semibold text-[#333] mt-4">
                 {testimonial.name}
@@ -234,34 +281,44 @@ const Reviews = () => {
               <h2 className="font-semibold text-sm font-[Poppins] text-[#333] mt-1">
                 {testimonial.role}
               </h2>
-
-              <div className="flex mt-10 gap-4  justify-evenly ">
-                {testimonial.images.map((img, i) => (
-                  <div
-                    key={i}
-                    className=" h-17 w-17 rounded-full overflow-hidden"
-                  >
+            </div>
+          ))}
+        </Slider>
+        <div className="relative">
+          <div className="mt-10 flex justify-center">
+            <Slider
+              ref={avatarSliderRef}
+              dots={false}
+              infinite={true}
+              speed={500}
+              slidesToShow={3}
+              slidesToScroll={1}
+              autoplay={false}
+              arrows={false}
+              className="w-full"
+            >
+              {testimonials[0]?.images.map((img: string, i: number) => (
+                <div key={i} className="px-12">
+                  <div className="h-20 w-20 rounded-full overflow-hidden">
                     <Image
                       src={img}
                       alt={`review-avatar-${i}`}
                       width={80}
                       height={80}
-                      className={`rounded-full object-cover ${
-                        currentSlide === idx && i === 1
-                          ? "opacity-100"
-                          : "opacity-25"
+                      className={`rounded-full object-cover transition-opacity duration-300 ${
+                        i === 1 ? "opacity-100" : "opacity-25"
                       }`}
                     />
                   </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </Slider>
+                </div>
+              ))}
+            </Slider>
+          </div>
+        </div>
       </div>
 
       <div className="w-full flex justify-center absolute -mt-130 left-0">
-        <div className="w-[1100px]">
+        <div className="w-full">
           <Slider
             dots={false}
             infinite={true}
@@ -280,7 +337,7 @@ const Reviews = () => {
                 <Image
                   src={logo}
                   alt={`Company Logo ${idx + 1}`}
-                  width={180}
+                  width={150}
                   height={180}
                   className="object-contain opacity-70 filter grayscale hover:grayscale-0 transition hover:cursor-pointer hover:opacity-100"
                 />

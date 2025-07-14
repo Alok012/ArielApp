@@ -54,19 +54,19 @@ const LatestNews = () => {
     sliderRef.current?.slickNext();
   };
   return (
-    <div className="relative py-20 px-4 bg-white">
+    <div className="relative py-20 px-4 bg-white ml-0 lg:ml-30 xl:ml-0">
       <div className="text-center mb-10">
         <h1 className="text-[28px] sm:text-[34px] font-semibold text-[#263b5e]">
           Read Our Latest News
         </h1>
-        <p className="text-[#77838f] max-w-[500px] mx-auto mt-3 text-sm sm:text-[16px] leading-6">
+        <p className="text-[#77838f] w-[70%] mx-auto mt-3 text-sm sm:text-[16px] leading-6">
           Our duty towards you is to share our experience we&apos;re reaching in our
           work path with you.
         </p>
       </div>
 
       <div className="w-full flex justify-center">
-        <div className="w-full max-w-[1100px] relative">
+        <div className="w-full relative">
           <Slider {...settings} ref={sliderRef}>
             {NewsData.map((item, idx) => (
               <div key={idx} className="px-2 sm:px-4">

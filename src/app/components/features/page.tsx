@@ -8,7 +8,7 @@ import Square from "../../../assets/portfolio.png";
 
 const Features = () => {
   return (
-    <div className="bg-gradient-to-b from-[#ffffff] to-[#f8f9fb] mt-40 lg:mt-64 w-full">
+    <div className="bg-gradient-to-b from-[#ffffff] to-[#f8f9fb] mt-40 lg:mt-64 w-full lg:ml-26 xl:ml-0">
       <div className="text-center mx-5">
         <h1 className="text-3xl sm:text-4xl font-[Poppins] -mt-10">
           Core Features

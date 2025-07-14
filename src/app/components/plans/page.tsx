@@ -8,7 +8,7 @@ const Plans = () => {
   const [activePlan, setActivePlan] = useState("monthly");
 
   return (
-    <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-10 px-4 lg:ml-20 mt-20">
+    <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-10 px-4 lg:ml-30 xl:-ml-6 mt-20">
       <div className="w-full max-w-md ">
         <p className="text-3xl font-medium capitalize text-[#333] text-center lg:text-left">
           No Additional Costs. <br />

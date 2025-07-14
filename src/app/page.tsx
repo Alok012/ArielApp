@@ -12,18 +12,19 @@ import WorkStep from "./components/workstep/page";
 
 export default function Home() {
   return (
-    <div>
+    <div className="border-5">
       <Navbar />
-      <Homepage />
-       <Features /> 
+        <Homepage />
+      <Features /> 
+      <WorkStep />
       <WorkStep />
       <ScreenShot />
-       <Plans />
-      <Reviews />
-       <AskedQuestions />
-      <LatestNews />
-      <ContactUs /> 
-      <Footer />
+        <Plans />
+       <Reviews />
+      <AskedQuestions />
+       {/* <LatestNews />
+     <ContactUs /> 
+     <Footer /> */}
     </div>
   );
 }

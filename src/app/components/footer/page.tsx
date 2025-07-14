@@ -46,7 +46,7 @@ const Footer = () => {
         )}
         <div className="relative mt-5">
           <WaveBackground />
-          <div className=" font-bold ml-60 absolute top-110">
+          <div className=" font-bold ml-50 absolute top-110">
             <Image
               src="https://elmanawy.info/demo/ariel/ltr/images/logo.png"
               alt="logo"
@@ -84,7 +84,7 @@ const Footer = () => {
               </Link>
             </nav>
           </div>
-          <div className="flex relative -mt-80 ml-160">
+          <div className="flex relative -mt-80 ml-150">
             <div className="text-white ">
               <span className="flex">
                 <HiOutlineSquare2Stack size={20} className="text-white mt-2" />
@@ -208,10 +208,10 @@ const Footer = () => {
         </div>
       )}
 
-      <div className=" w-full  bg-gradient-to-r from-[#8d23c7] to-[#774cf9] text-white pt-20 pb-10 px-4 mt-70 md:mt-30 right-0">
-        <div className="relative z-10 max-w-[1400px] mx-auto">
+      <div className=" w-full  bg-gradient-to-r from-[#8d23c7] to-[#774cf9] text-white pt-20 pb-10 px-4 mt-80 md:mt-30 ">
+        <div className="relative z-10 w-full mx-auto">
           <div className="flex flex-col lg:flex-row justify-between gap-10">
-            <div className="lg:w-1/3 text-left lg:text-left -mt-8">
+            <div className="lg:w-1/3 text-left lg:text-left -mt-8 ">
               <Image
                 src="https://elmanawy.info/demo/ariel/ltr/images/logo.png"
                 alt="logo"
@@ -219,7 +219,7 @@ const Footer = () => {
                 height={180}
                 className=" lg:mx-0"
               />
-              <p className="mt-4 text-base w-100 font-normal font-[sans-serif]  md:w-120">
+              <p className="mt-4 text-base w-100 font-normal font-[sans-serif]  md:w-120 lg:w-100">
                 Intrinsicly matrix high stadards in niches whereas
                 intermandated niche markets. Objectively harness competitive
                 resources.
@@ -256,7 +256,7 @@ const Footer = () => {
                 )}
               </div>
               <div className="lg:w-1/2">
-                <div className="flex items-center gap-2 mb-3">
+                <div className="flex items-center gap-2 mb-3 ">
                   <HiOutlineSquare2Stack size={20} />
                   <h1 className="font-semibold text-sm mt-4 my-2">USER ACCOUNT</h1>
                 </div>
@@ -290,7 +290,7 @@ const Footer = () => {
                   <input
                     type="email"
                     placeholder="Enter Your Email"
-                    className="flex-grow px-4 py-2 text-sm h-12 lg:w-30 outline-none text-black bg-white"
+                    className="flex-grow px-4 py-2 text-sm h-12 md:w-20 lg:w-30 outline-none text-black bg-white"
                   />
                   <button
                     type="submit"
@@ -304,7 +304,7 @@ const Footer = () => {
           </div>
           <div className="mt-10">
             <hr className="border-t border-gray-400 w-full" />
-            <p className="text-center mt-6 text-sm text-white flex">
+            <p className="text-center mt-6 text-sm text-white flex justify-center items-center">
               Copyrights © 2020. Designed by <TfiHeart className="mx-1 mt-1"/> Marwa El-Manawy
             </p>
           </div>

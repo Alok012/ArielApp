@@ -2,7 +2,7 @@ import React from "react";
 
 const WaveBackground = () => {
   return (
-    <div className="relative w-full h-[750px] overflow-hidden rounded-t-">
+    <div className="relative w-full h-[750px] overflow-hidden rounded-t-4xl">
       {/* Back Quadrilateral */}
       <svg
         viewBox="0 0 1440 400"

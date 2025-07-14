@@ -27,15 +27,15 @@ const ScreenShot = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   return (
-    <div className="relative pt-28 sm:pt-36 mt-10 md:mt-20  pb-20 overflow-hidden">
+    <div className="w-full relative pt-28 sm:pt-36 mt-10 md:mt-20  pb-20 overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full z-0">
         {!isMobile ? (
           <BgScreenshot />
         ) : (
-          <div className="bg-[#f8f9fb] w-full h-full"></div>
+          <div className="bg-[#f8f9fb] w-full h-full "></div>
         )}{" "}
       </div>
-      <div className="relative z-10 max-w-7xl mx-auto px-4 -mt-12 lg:-mt-20">
+      <div className="relative z-10 w-full mx-auto px-4 -mt-12 lg:-mt-20">
         <h1 className="text-4xl sm:text-4xl md:text-4xl text-center font-semibold text-[#333]">
           App Screenshots
         </h1>
@@ -55,7 +55,7 @@ const ScreenShot = () => {
                 alt="Phone Overlay"
                 width={250}
                 height={470}
-                className=" object-contain w-[260px] sm:w-[100px] h-[445px] md:w-[230px] lg:w-[228px] xl:w-[228px]"
+                className=" object-contain w-[260px] sm:w-[100px] h-[445px] md:w-[230px] lg:w-[228px] xl:w-[228px] ml-0 lg:ml-10 xl:-ml-2"
               />
             </div>
 
